@@ -68,7 +68,7 @@ const BlogCard = ({
 const posts = [
     {
         id: 1,
-        cover: "https://cdn.pixabay.com/photo/2024/06/21/07/46/yoga-8843808_1280.jpg",
+        cover: "https://www.perfectgrader.com/storage/thumbnails/posts/7Q3bXTK6XuK0AcuLq6mVDC9GGTIPJHcYm0gyOwpg.jpg",
         published_date: {
             day: "10",
             month: "May",
@@ -99,39 +99,6 @@ const posts = [
         author: "John Doe",
         title: "Here some good ways write type safe support attaque ",
     },
-    {
-        id: 4,
-        cover: "https://cdn.pixabay.com/photo/2024/06/21/07/46/yoga-8843808_1280.jpg",
-        published_date: {
-            day: "10",
-            month: "May",
-        },
-        category: "categoryName",
-        author: "John Doe",
-        title: "Here some good ways write type safe support attaque ",
-    },
-    {
-        id: 5,
-        cover: "https://cdn.pixabay.com/photo/2023/12/15/03/11/basket-to-the-sea-8449952_1280.jpg",
-        published_date: {
-            day: "10",
-            month: "May",
-        },
-        category: "categoryName",
-        author: "John Doe",
-        title: "Here some good ways write type safe support attaque ",
-    },
-    {
-        id: 6,
-        cover: "https://flexiwind.vercel.app/prev/images/working-on-housing-project.jpg",
-        published_date: {
-            day: "10",
-            month: "May",
-        },
-        category: "categoryName",
-        author: "John Doe",
-        title: "Here some good ways write type safe support attaque ",
-    },
 ];
 
 const BlogSection = () => {
@@ -147,7 +114,7 @@ const BlogSection = () => {
                     <span className="w-4/12 lg:w-2/12 aspect-square bg-gradient-to-tr from-blue-600 to-green-400 absolute -top-5 lg:left-0 rounded-full skew-y-12 blur-2xl opacity-40 skew-x-12 rotate-90" />
                     <div className="relative space-y-10">
                         <div className="text-center space-y-6 max-w-2xl mx-auto">
-                            <h1 className="text-3xl font-bold text-gray-900 dark:text-white capitalize">
+                            <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white capitalize">
                                 Our most recent Articles
                             </h1>
                             <p className="text-gray-700 dark:text-gray-300">
