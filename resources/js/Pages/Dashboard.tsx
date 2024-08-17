@@ -17,6 +17,9 @@ export default function Dashboard({ auth }: PageProps) {
                     </div>
                 </div>
             </div>
+
+           
+                
         </AuthenticatedLayout>
     );
 }
