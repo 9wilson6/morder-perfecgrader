@@ -42,6 +42,13 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'role' => 'string',
+            'status' => 'string',
+            'verified' => 'boolean',
+            'rating' => 'integer',
+            'about' => 'text',
+            'photo' => 'string',
+            'projects_completed' => 'integer',
         ];
     }
 }

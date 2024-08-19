@@ -62,7 +62,7 @@ const Navbar = ({ auth }: PageProps) => {
                         <div className="w-full flex flex-col md:flex-row justify-start sm:w-max space-x-4 lg:min-w-max lg:items-center">
                             {auth.user ? (
                                 <Link
-                                    href={route("/logout")}
+                                    href={route("logout")}
                                     method="post"
                                     className="flex justify-center gap-x-3 items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white
                                 border-b bg-gray-700 dark:border-blue-300 hover:border-b-gray-900 dark:hover:border-b-white bg-transparent"
