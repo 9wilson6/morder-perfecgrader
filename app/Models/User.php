@@ -16,11 +16,20 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    // protected $fillable = [
+    //     'email_verified_at' => 'datetime',
+    //     'name' => 'string',
+    //     'password' => 'hashed',
+    //     'role' => 'string',
+    //     'status' => 'string',
+    //     'verified' => 'boolean',
+    //     'rating' => 'integer',
+    //     'about' => 'text',
+    //     'photo' => 'string',
+    //     'projects_completed' => 'integer',
+    // ];
+
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,13 +51,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
-            'role' => 'string',
-            'status' => 'string',
-            'verified' => 'boolean',
-            'rating' => 'integer',
-            'about' => 'text',
-            'photo' => 'string',
-            'projects_completed' => 'integer',
         ];
     }
+
+   
 }

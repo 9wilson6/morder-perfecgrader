@@ -19,8 +19,11 @@ const generateBreadcrumbs = (path: string) => {
     const pathSegments = path.split("/").filter(Boolean);
     const breadcrumbs = [{ href: "/", label: "Home" }]; // Default home breadcrumb
 
-    pathSegments.forEach((segment, index) => {
-        const href = "/" + pathSegments.slice(0, index + 1).join("/");
+    // Skip 'admin' or 'tutor' segments
+    const filteredSegments = pathSegments.filter(segment => !['admin', 'tutor'].includes(segment));
+
+    filteredSegments.forEach((segment, index) => {
+        const href = "/" + filteredSegments.slice(0, index + 1).join("/");
         const label = customBreadcrumbs[segment] || formatBreadcrumbLabel(segment);
         breadcrumbs.push({ href, label });
     });

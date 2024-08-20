@@ -19,6 +19,7 @@ import Dropdown from "@/Components/Dropdown";
 import { ModeToggle } from "@/Components/mode-toggle";
 import { ThemeProvider } from "@/Components/theme-provider";
 import Breadcrumb from "@/Components/Breadcrumb";
+import { AdminLinks, StudentLinks, TutorLinks } from "@/lib/data";
 
 export default function Authenticated({
     user,
@@ -28,10 +29,18 @@ export default function Authenticated({
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
-  
     const [open, setOpen] = useState(false);
 
     const { url } = usePage();
+
+    let links;
+    if (user.role === "tutor") {
+        links = TutorLinks;
+    } else if (user.role === "admin") {
+        links = AdminLinks;
+    } else {
+        links = StudentLinks;
+    }
 
     return (
         <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
@@ -54,14 +63,14 @@ export default function Authenticated({
                                 <ModeToggle />
                             </div>
 
-                            <div className="hidden sm:flex sm:items-center sm:ms-6 max-w-max">
-                                <div className="ms-3 relative">
+                            <div className="hidden sm:flex sm:items-center sm:ms-6 max-w-max ">
+                                <div className="ms-3 relative ">
                                     <Dropdown>
                                         <Dropdown.Trigger>
                                             <span className="inline-flex rounded-md">
                                                 <button
                                                     type="button"
-                                                    className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                    className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-white bg-white dark:bg-neutral-800 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                                 >
                                                     {user.name}
 
@@ -236,34 +245,3 @@ export default function Authenticated({
         </ThemeProvider>
     );
 }
-
-const links = [
-    {
-        label: "Dashboard",
-        href: "dashboard",
-        icon: (
-            <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-        ),
-    },
-    {
-        label: "Profile",
-        href: "profile",
-        icon: (
-            <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-        ),
-    },
-    {
-        label: "Settings",
-        href: "#",
-        icon: (
-            <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-        ),
-    },
-    {
-        label: "Logout",
-        href: "#",
-        icon: (
-            <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-        ),
-    },
-];
